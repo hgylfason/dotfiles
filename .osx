@@ -90,11 +90,11 @@ if [[ "$RUN_AS_ROOT" = true ]]; then
   sudo pmset -a hibernatemode 0
 
   # Remove the sleep image file to save disk space
-  sudo rm /Private/var/vm/sleepimage
+  # sudo rm /Private/var/vm/sleepimage
   # Create a zero-byte file instead...
-  sudo touch /Private/var/vm/sleepimage
+  # sudo touch /Private/var/vm/sleepimage
   # ...and make sure it can’t be rewritten
-  sudo chflags uchg /Private/var/vm/sleepimage
+  # sudo chflags uchg /Private/var/vm/sleepimage
 
   # Disable the sudden motion sensor as it’s not useful for SSDs
   sudo pmset -a sms 0
@@ -281,9 +281,9 @@ defaults write com.apple.dock showhidden -bool true
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
 # Add iOS Simulator to Applications folder.
-if [[ "$RUN_AS_ROOT" = true ]]; then
-  sudo ln -sf /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app /Applications/Simulator.app
-fi
+# if [[ "$RUN_AS_ROOT" = true ]]; then
+#   sudo ln -sf /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app /Applications/Simulator.app
+# fi
 
 # Hot corners
 # Possible values:
@@ -336,17 +336,17 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 ###############################################################################
 
 # Disable send and reply animations in Mail.app
-defaults write com.apple.mail DisableReplyAnimations -bool true
-defaults write com.apple.mail DisableSendAnimations -bool true
+# defaults write com.apple.mail DisableReplyAnimations -bool true
+# defaults write com.apple.mail DisableSendAnimations -bool true
 
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
-defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+# defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
 # Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app
 # defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" -string "@\\U21a9"
 
 # Display emails in threaded mode
-defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
+# defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
 # defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortedDescending" -string "yes"
 # defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -string "received-date"
 
