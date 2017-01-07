@@ -1,6 +1,5 @@
 syntax on               " enable syntax highlighting
 set cursorline          " highlight the current line
-" set background=dark   " darker color scheme
 " set ruler             " show line number in bar
 set nobackup            " don't create pointless backup files; Use VCS instead
 set autoread            " watch for file changes
@@ -14,7 +13,8 @@ set scrolloff=5         " show at least 5 lines above/below
 filetype on             " enable filetype detection
 filetype indent on      " enable filetype-specific indenting
 filetype plugin on      " enable filetype-specific plugins
-colorscheme cobalt      " requires cobalt.vim to be in ~/.vim/colors
+colorscheme solarized   " requires cobalt.vim to be in ~/.vim/colors
+set background=light  " darker color scheme
 
 " column-width visual indication
 let &colorcolumn=join(range(81,999),",")
@@ -50,3 +50,22 @@ inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     {
 inoremap {}     {}
+
+" vundle
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" bundles here
+Plugin 'altercation/vim-colors-solarized'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
