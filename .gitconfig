@@ -1,6 +1,6 @@
 [user]
-  name = Jeff Geerling
-  email = geerlingguy@mac.com
+  name = Helgi Gylfason
+  email = hgylfason@gmail.com
 [core]
   editor = vi
   excludesfile = ~/.gitignore
@@ -11,7 +11,7 @@
   interactive = auto
   status = auto
 [web]
-  browser = google-chrome
+  browser = safari
 [credential]
   helper = osxkeychain
 [push]
